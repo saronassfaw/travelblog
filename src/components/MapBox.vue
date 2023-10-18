@@ -11,12 +11,11 @@ export default {
       map: null,
       feature: null,
       popup: null
-    };
+    }
   },
   mounted() {
-
-    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_MY_API_KEY;
-
+    mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_MY_API_KEY
+    console.log('API Key:', mapboxgl.accessToken)
 
     mapboxgl.on('load', () => {
       const map = new mapboxgl.Map({
@@ -24,30 +23,30 @@ export default {
         style: 'mapbox://styles/saronassfaww/clnkjx1u1002001pg1wb70rpe',
         center: [138.2529, 36.2048],
         zoom: 5
-      });
+      })
 
-      this.map = map;
+      this.map = map
 
       this.map.on('click', (event) => {
         const features = this.map.queryRenderedFeatures(event.point, {
           layers: ['japan']
-        });
+        })
         if (!features.length) {
-          return;
+          return
         }
-        const feature = features[0];
-        this.feature = feature;
+        const feature = features[0]
+        this.feature = feature
 
         const popup = new mapboxgl.Popup({ offset: [0, -15] })
           .setLngLat(this.feature.geometry.coordinates)
           .setHTML(
             `<h3>${this.feature.properties.title}</h3><p>${this.feature.properties.description}</p>`
           )
-          .addTo(this.map);
+          .addTo(this.map)
 
-        this.popup = popup;
-      });
-    });
+        this.popup = popup
+      })
+    })
   }
 }
 </script>
