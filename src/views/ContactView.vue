@@ -6,7 +6,7 @@
     <p>This project was made by</p>
     <img src="../components/images/me.png" alt="">
     <h1>Saron<br />Assfaw</h1>
-    <a href="https://github.com/saronassfaw/vueproject"><i class="fa-brands fa-github"></i></a>
+    <a href="https://github.com/saronassfaw/travelblog"><i class="fa-brands fa-github"></i></a>
     <a href="https://hamburgcodingschool.com/"><p>hamburg coding school</p></a>
   </main>
   <SocialMedia />
